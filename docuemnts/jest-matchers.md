@@ -18,7 +18,7 @@
 
 - Jest DOM Matchers
 
-1. [toBeDieabled](#tobedieabled)
+1. [toBeDisabled](#tobedisabled)
 2. [toBeEnabled](#tobeenabled)
 3. [toBeEmptyDOMElement](#tobeemptydomelement)
 4. [toBeInTheDocument](#tobeinthedocument)
