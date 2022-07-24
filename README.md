@@ -15,6 +15,8 @@
 5. [getByRole 역할의 종류](#역할의-종류)
 6. [Screen Query](#screen-query)
 7. [Jest Matchers](#jest-matchers)
+8. [fireEvent](#fireEvent)
+9. [userEvent](#userEvent)
 
 - etc.
   - [React Testing Library, jest-dom ESLint Setting](https://github.com/ssi02014/React-Test-Documents-To-Reference/blob/master/docuemnts/eslint.md)
@@ -145,5 +147,47 @@ const input = screen.getByRole("textbox");
 
 expect(input).toBeInTheDocument(); // toBeInTheDocument matcher 사용
 ```
+
+<br />
+
+## fireEvent
+
+- [RTL - fireEvent 공식 문서](https://testing-library.com/docs/dom-testing-library/api-events/)
+- fireEvent는 쿼리 함수로 선택된 영역을 대상으로 `특정 이벤트를 발생시키기 위한 이벤트 함수들을 담고 있다.`
+- fireEvent는 아래와 같이 기본적인 포맷을 갖고 있다.
+
+```
+fireEvent(node: HTMLElement, event: Event)
+```
+
+- fireEvent가 갖고있는 이벤트 함수들은 아래 사이트를 참고하자.
+- [fireEvent 이벤트 함수 종류들](https://github.com/testing-library/dom-testing-library/blob/main/src/event-map.js)
+
+```js
+import { render, screen, fireEvent } from "@testing-library/react";
+
+test("버튼을 클릭하면 배경색이 빨간색으로 변경한다.", () => {
+  const button = screen.getByRole("button", {
+    name: "button",
+  });
+
+  fireEvent.click(colorButton);
+  expect(colorButton).toHaveStyle({ backgroundColor: "red" });
+});
+```
+
+<br />
+
+## userEvent
+
+- [RTL - fireEvent 공식 문서](https://testing-library.com/docs/dom-testing-library/api-events/)를 보면 실제로 fireEvent도 좋지만 대부분의 경우 userEvent를 사용해야된다고 언급된다.
+- 일반적으로 fireEvent에 비해 useEvent가 사용자 이벤트를 `더욱 완전하고 현실적인 방식으로 시뮬레이션 한다.`
+
+```
+Most projects have a few use cases for fireEvent, but the majority of the time you should probably use @testing-library/user-event.
+```
+
+- userEvent에대해서는 아래 문서를 통해 자세히 알아보자.
+- [userEvent](https://github.com/ssi02014/React-Test-Documents-To-Reference/blob/master/docuemnts/userEvent.md) (~ing)
 
 <br />
