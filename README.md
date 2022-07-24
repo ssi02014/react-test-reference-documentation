@@ -16,7 +16,7 @@
 6. [Screen Query](#screen-query)
 7. [Jest Matchers](#jest-matchers)
 
-- ETC
+- etc.
   - [React Testing Library, jest-dom ESLint Setting](https://github.com/ssi02014/React-Test-Documents-To-Reference/blob/master/docuemnts/eslint.md)
 
 <br />
@@ -79,7 +79,7 @@
 ## 쿼리 우선순위
 
 - 아래 문서를 통해 가상 DOM에서 요소를 찾을 때 어떤 쿼리를 우선 순위로 사용해야 하는지 참고하자.
-  - [쿼리 우선순위(priority)](https://github.com/ssi02014/React-Test-Documents-To-Reference/blob/master/docuemnts/priority.md)
+- [쿼리 우선순위(priority)](https://github.com/ssi02014/React-Test-Documents-To-Reference/blob/master/docuemnts/priority.md)
 
 <br />
 
@@ -87,8 +87,11 @@
 
 - [쿼리 우선순위(priority)](https://github.com/ssi02014/React-Test-Documents-To-Reference/blob/master/docuemnts/priority.md)를 봤으면 `getByRole`를 사용하는 방법 즉, `역할`을 통해 요소를 찾을 수 있고, 실제로 `스크린 리더에서 액세스 할 수 있다.` 따라서 접근성을 보장하기때문에 요소를 찾을때 `가장 선호되는 방법`이다.
 - getByRole이 어떤 역할을 갖고 있는지 확인하려면 아래 문서를 확인하자.
-  - [getByRole 역할 종류](https://www.w3.org/TR/wai-aria/#role_definitions)
-- 역할 속성을 사용해서 div에 모든 요소에 역할을 추가할 수 있다. 코드에는 단순히 `role=""`처럼 큰따옴표로 역할을 묶으면 된다.
+- [getByRole 역할 종류](https://www.w3.org/TR/wai-aria/#role_definitions)
+
+<br />
+
+- role 속성을 사용해서 `div`에 모든 역할을 추가할 수 있다. 코드에는 단순히 `role=""`처럼 큰따옴표로 역할을 묶으면 된다.
 - 일반적으로 스크린 리더에서 테스트 요소를 찾을 수 없으면, 그건 우리의 앱이 스크린 리더에 친화적이지 않은 거고 접근성에서 안좋다는 의미이다.
 
 ```html
@@ -106,7 +109,7 @@ expect(textbox).toBeEmptyDOMElement();
 ## Screen Query
 
 - Screen Query는 페이지에서 `요소를 찾기 위해` Testing Library가 제공하는 방법입니다.
-- 아래 문서를 통해 screen query를 자세히 확인하자.
+- 아래 문서를 통해 Screen Query를 자세히 확인하자.
 - [Screen Query](https://github.com/ssi02014/React-Test-Documents-To-Reference/blob/master/docuemnts/screen-query.md)
 
 ```html
