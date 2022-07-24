@@ -59,7 +59,7 @@
 - 인수(Acceptance) 테스트 혹은 End to End (E2E) 테스트
 
   - 실제 사용자 환경에서 사용자의 입장으로 테스트를 수행하는 것을 의미한다.
-  - 실제 `브라우저`가 필요하고 애플리케이션이 연결된 `서버`가 필요하다. 보통 `Cypress나 Selenium`과 같은 도구가 필요하다. `이 테스트는 RTL을 위해 설계된 테스트는 아니다.`
+  - 실제 `브라우저`가 필요하고 애플리케이션이 연결된 `서버`가 필요하다. 보통 `Cypress`나 `Selenium`과 같은 도구가 필요하다. 참고로 이 테스트는 `RTL을 위해 설계된 테스트는 아니다.`
 
 <br />
 
@@ -72,7 +72,7 @@
 
 - RTL은 우리의 웹사이트가 `어떻게 사용되는지 최대한 가깝게` 테스트를 작성할 수 있도록 장려하는 메서드와 유틸리티를 제공한다.
 - 테스트 할 때 실제 사용자가 쓰는 것처럼 해야 하는데 여기에 `스크린 리더`와 같은 `접근성 인터페이스`도 포함된다.
-- 그러면 접근성을 준수하기위해 어떤 쿼리를 우선순위로 사용해야되는 지는 아래를 참고하자.
+- 접근성을 준수하기위해 어떤 쿼리를 우선순위로 사용해야되는 지는 아래를 참고하자.
 
 <br />
 
@@ -91,7 +91,7 @@
 
 <br />
 
-- role 속성을 사용해서 `div`에 모든 역할을 추가할 수 있다. 코드에는 단순히 `role=""`처럼 큰따옴표로 역할을 묶으면 된다.
+- role 속성을 사용해서 `div`처럼 모든 요소에 역할을 추가할 수 있다. 코드에는 단순히 `role=""`처럼 큰따옴표로 역할을 묶으면 된다.
 - 일반적으로 스크린 리더에서 테스트 요소를 찾을 수 없으면, 그건 우리의 앱이 스크린 리더에 친화적이지 않은 거고 접근성에서 안좋다는 의미이다.
 
 ```html
@@ -109,7 +109,7 @@ expect(textbox).toBeEmptyDOMElement();
 ## Screen Query
 
 - Screen Query는 페이지에서 `요소를 찾기 위해` Testing Library가 제공하는 방법입니다.
-- 아래 문서를 통해 Screen Query를 자세히 확인하자.
+- 아래 문서를 통해 Screen Query에대해 알아보자.
 - [Screen Query](https://github.com/ssi02014/React-Test-Documents-To-Reference/blob/master/docuemnts/screen-query.md)
 
 ```html
@@ -132,7 +132,7 @@ expect(button).toBeDisabled();
 ## Jest Matchers
 
 - Jest는 `matcher`를 사용하여 다양한 방식으로 값을 테스트할 수 있습니다.
-- 아래 문서를 통해 다양한 Jest의 Matcher를 확인하자
+- 아래 문서를 통해 다양한 Jest의 Matcher를 알아보자
 - [Jest Matchers](https://github.com/ssi02014/React-Test-Documents-To-Reference/blob/master/docuemnts/jest-matchers.md)
 
 ```html
