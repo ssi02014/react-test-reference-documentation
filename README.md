@@ -103,6 +103,28 @@ expect(textbox).toBeEmptyDOMElement();
 
 <br />
 
+## screen query
+
+- screen query는 페이지에서 `요소를 찾기 위해` Testing Library가 제공하는 방법입니다.
+
+```html
+<button type="submit" disabled>submit</button>
+```
+
+```js
+import { screen } from "@testing-library/react";
+
+const button = screen.getByRole("button", {
+  name: "submit",
+});
+expect(button).toBeDisabled();
+```
+
+- 아래 문서를 통해 screen query를 자세히 확인하자.
+- [screen query]()
+
+<br />
+
 ## Jest Matchers
 
 - Jest는 `matcher`를 사용하여 다양한 방식으로 값을 테스트할 수 있습니다.
