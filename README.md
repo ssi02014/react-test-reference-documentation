@@ -1,8 +1,7 @@
 # 💻 리액트 테스트 참고 저장소
 
-- Jeat, React Testing Library 등 리액트 테스트 관련 참고 저장소입니다.
-- Jest, RTL 각각의 개념을 자세히 알아보기보다는 자주 확인하게되는 쿼리 우선순위, Screen Query, matchers 종류 등을 보기 쉽게 정리한 저장소임을 알립니다.
-- (현재 진행중)
+- 해당 저장소는 Jest, RTL 각각의 개념을 자세히 알아보기보다는 자주 확인하게되는 `쿼리 우선순위`, `Screen Query`, `jest matchers`, `fireEvent(userEvent) 이벤트 함수 종류` 등을 찾아보기 쉽게 정리한 저장소입니다.
+- 오탈자 및 수정이 필요한 내용은 pr, issue 등 자유롭게 남겨주시면 반영하겠습니다.
 
 <br />
 
@@ -167,6 +166,7 @@ fireEvent(node: HTMLElement, event: Event)
 import { render, screen, fireEvent } from "@testing-library/react";
 
 test("버튼을 클릭하면 배경색이 빨간색으로 변경한다.", () => {
+  render(<MyComponent />);
   const button = screen.getByRole("button", {
     name: "button",
   });
@@ -188,6 +188,6 @@ Most projects have a few use cases for fireEvent, but the majority of the time y
 ```
 
 - userEvent에대해서는 아래 문서를 통해 자세히 알아보자.
-- [userEvent](https://github.com/ssi02014/React-Test-Documents-To-Reference/blob/master/docuemnts/userEvent.md) (~ing)
+- [userEvent](https://github.com/ssi02014/React-Test-Documents-To-Reference/blob/master/docuemnts/userEvent.md) ( ~ 작성중 )
 
 <br />
