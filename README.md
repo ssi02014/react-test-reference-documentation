@@ -181,7 +181,8 @@ test("버튼을 클릭하면 배경색이 빨간색으로 변경한다.", () => 
 ## userEvent
 
 - [RTL - fireEvent 공식 문서](https://testing-library.com/docs/dom-testing-library/api-events/)를 보면 실제로 fireEvent도 좋지만 대부분의 경우 userEvent를 사용해야된다고 언급된다.
-- 일반적으로 fireEvent에 비해 useEvent가 사용자 이벤트를 `더욱 완전하고 현실적인 방식으로 시뮬레이션 한다.`
+- 일반적으로 fireEvent에 비해 userEvent가 사용자 이벤트를 `더욱 완전하고 현실적인 방식으로 시뮬레이션 한다.`
+- 쉽게 말하면, 사용자가 실제 웹사이트를 이용하는 플로우대로 시뮬레이션한다.
 
 ```
 Most projects have a few use cases for fireEvent, but the majority of the time you should probably use @testing-library/user-event.
