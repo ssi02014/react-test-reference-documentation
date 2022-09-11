@@ -5,6 +5,12 @@
 
 <br />
 
+## 🌟 Contributors
+
+[![contributors](https://contrib.rocks/image?repo=ssi02014/React-Test-Documents-To-Reference)](https://github.com/ssi02014/React-Test-Documents-To-Reference/graphs/contributors)
+
+<br />
+
 ## 📄 목차
 
 1. [React Testing Library](#react-testing-library)
@@ -17,8 +23,12 @@
 8. [fireEvent](#fireEvent)
 9. [userEvent](#userEvent)
 
-- etc.
-  - [React Testing Library, jest-dom ESLint Setting](https://github.com/ssi02014/React-Test-Documents-To-Reference/blob/master/docuemnts/eslint.md)
+<br />
+
+- Others
+
+1. [React Testing Library, jest-dom ESLint Setting](https://github.com/ssi02014/React-Test-Documents-To-Reference/blob/master/docuemnts/eslint.md)
+2. [React Testing Library에서 자주하는 실수 및 해결](https://kentcdodds.com/blog/common-mistakes-with-react-testing-library)
 
 <br />
 <br />
@@ -88,6 +98,7 @@
 
 - [쿼리 우선순위(priority)](https://github.com/ssi02014/React-Test-Documents-To-Reference/blob/master/docuemnts/priority.md)를 봤으면 `getByRole`를 사용하는 방법 즉, `역할`을 통해 요소를 찾을 수 있고, 실제로 `스크린 리더에서 액세스 할 수 있다.` 따라서 접근성을 보장하기때문에 요소를 찾을때 `가장 선호되는 방법`이다.
 - getByRole이 어떤 역할을 갖고 있는지 확인하려면 아래 문서들을 참고하자.
+  - [W3C - ARIA in HTML](https://www.w3.org/TR/html-aria/#docconformance)
   - [W3C - getByRole 역할 종류](https://www.w3.org/TR/wai-aria/#role_definitions)
   - [ARIA - Roles](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques#roles)
 

@@ -25,7 +25,7 @@
 
 <br />
 
-- userEvent를 프로젝트에 적용하려면 별도의 설치가 필요하다.
+- userEvent를 프로젝트에 적용하려면 `별도의 설치`가 필요하다.
 
 ```
 npm install --save-dev @testing-library/user-event @testing-library/dom
@@ -33,7 +33,7 @@ npm install --save-dev @testing-library/user-event @testing-library/dom
 yarn add -D @testing-library/user-event @testing-library/dom
 ```
 
-- 설치 후에는 다음과 같이 userEvent를 import하고 사용하면 된다.
+- 설치 후에는 다음과 같이 test파일에서 userEvent를 import하고 사용하면 된다.
 
 ```js
 import { render, screen } from "@testing-library/react";
@@ -96,7 +96,7 @@ test("click", () => {
 ### type
 
 - `type(element, text, [options])`
-- `type`은 input 또는 textarea에 text 입력을 시뮬레이션 할 수 있다.
+- `type`은 input 또는 textarea에 `text 입력`을 시뮬레이션 할 수 있다.
 
 ```js
 import userEvent from "@testing-library/user-event";
@@ -134,7 +134,7 @@ test("click", () => {
 });
 ```
 
-- `<input type="time" />`은 다음과 같이 제공한다.
+- `<input type="time" />`은 다음과 같이 테스트를 진행한다.
 
 ```js
 test("types into the input", () => {
@@ -156,7 +156,7 @@ test("types into the input", () => {
 ### keyboard
 
 - `keyboard(text, options)`
-- keyboard는 키보드 이벤트를 시뮬레이션한다. 이는 userEvent.type과 유사하지만 선택 범위를 클릭하거나 변경하지는 않는다.
+- keyboard는 `키보드 이벤트`를 시뮬레이션한다. 이는 userEvent.type과 유사하지만 `선택 범위를 클릭하거나 변경하지는 않는다.`
 
 <br />
 
@@ -166,7 +166,7 @@ test("types into the input", () => {
 userEvent.keyboard("foo"); // translates to: f, o, o
 ```
 
-- `{`, `[`와 같은 괄호는 특수문자로 사용되며 이중화하여 참조할 수 있다.
+- `{`, `[`와 같은 괄호는 특수 문자로 사용되며, `이중화`하여 참조할 수 있다.
 
 ```js
 userEvent.keyboard("{{a[["); // translates to: {, a, [
@@ -190,11 +190,67 @@ userEvent.keyboard("[ShiftLeft][KeyF][KeyO][KeyO]"); // translates to: Shift, f,
 userEvent.keyboard("{Shift>}A{/Shift}"); // translates to: Shift(down), A, Shift(up)
 ```
 
-- userEvent.keyboard는 같이 누르는 것도 지원한다. 예를 들어 `왼쪽 컨트롤` 키를 누른 상태에서 `a` 누르기
+- userEvent.keyboard는 `같이 누르는 것`도 지원한다. 예를 들어 `왼쪽 컨트롤` 키를 누른 상태에서 `a` 누르기
 
 ```js
 const keyboardState = userEvent.keyboard("[ControlLeft>]"); // keydown [ControlLeft]
 userEvent.keyboard("a", { keyboardState }); // press [KeyA] with active ctrlKey
+```
+
+<br />
+
+### upload
+
+- `upload(element, file, [{ clickInit, changeInit }], [options])`
+- input 태그에 file을 upload한다.
+- 여러 파일을 업로드하려면 input 태그에 `multiple` 속성과 upload의 두 번째 인자인 file을 `배열`로 설정하면 된다. upload의 세 번째 인자를 사용하여 클릭 또는 변경 이벤트를 초기화 하는 것도 가능하다.
+
+```js
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+
+// 단일 파일 업로드
+test("upload file", () => {
+  const file = new File(["hello"], "hello.png", { type: "image/png" });
+
+  render(
+    <div>
+      <label htmlFor="file-uploader">Upload file:</label>
+      <input id="file-uploader" type="file" />
+    </div>
+  );
+
+  const input = screen.getByLabelText(/upload file/i);
+  userEvent.upload(input, file);
+
+  expect(input.files[0]).toStrictEqual(file);
+  expect(input.files.item(0)).toStrictEqual(file);
+  expect(input.files).toHaveLength(1);
+});
+
+// 멀티 파일 업로드
+test("upload multiple files", () => {
+  // files 배열로 설정
+  const files = [
+    new File(["hello"], "hello.png", { type: "image/png" }),
+    new File(["there"], "there.png", { type: "image/png" }),
+  ];
+
+  render(
+    <div>
+      <label htmlFor="file-uploader">Upload file:</label>
+      <input id="file-uploader" type="file" multiple /> {/* multiple */}
+    </div>
+  );
+
+  const input = screen.getByLabelText(/upload file/i);
+  userEvent.upload(input, files);
+
+  expect(input.files).toHaveLength(2);
+  expect(input.files[0]).toStrictEqual(files[0]);
+  expect(input.files[1]).toStrictEqual(files[1]);
+});
 ```
 
 <br />

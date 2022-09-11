@@ -82,9 +82,9 @@ test("3 더하기 5는 8입니다.", () => {
 
 ### toEqual toStrictEqual
 
-- toEqual은 toBe와 비슷하지만 다르다. 숫자와 문자열을 검증할 때는 둘은 동일하게 동작하지만 객체를 검증할 때는 다르게 동작한다.
-- toEqual은 재귀적으로 객체를 돌면서 각 value가 같은지 확인한다.
-- toStrictEqual은 toEqual보다 더 엄격하게 검증한다.
+- toEqual은 `toBe와 비슷하지만 다르다.` 숫자와 문자열을 검증할 때는 둘은 동일하게 동작하지만 객체를 검증할 때는 다르게 동작한다.
+- toEqual은 `재귀적`으로 객체를 돌면서 각 value가 같은지 확인한다.
+- `toStrictEqual은 toEqual보다 더 엄격하게 검증한다.`
 
 ```js
 const fn = {
@@ -100,8 +100,8 @@ test("이름과 나이를 받아서 객체를 반환해줍니다.", () => {
 
 ### toBeNull toBeUndefined toBeDefined
 
-- toBeNull은 오직 null과 같은지를 확인한다 (=== null)
-- toBeUndefined는 오직 undefined와 같은지를 확인한다 (=== undefined)
+- toBeNull은 `null과 같은지를 확인`한다 (=== null)
+- toBeUndefined는 `undefined`와 같은지를 확인한다 (=== undefined)
 - toBeDefined는 undefined가 아닌지를 확인한다. 즉, toBeUndefined 반대 개념
 
 ```js
@@ -122,8 +122,8 @@ test("undefined의 반대는 defined입니다.", () => {
 
 ### toBeTruthy toBeFalsy
 
-- toBeTruthy는 if문이 true라고 받아들일 값인지 검증하는 Matcher이다.
-- toBeFalsy는 if문이 false라고 받아들일 값인지 검증하는 Matcher이다.
+- toBeTruthy는 if문이 `true`라고 받아들일 값인지 검증하는 Matcher이다.
+- toBeFalsy는 if문이 `false`라고 받아들일 값인지 검증하는 Matcher이다.
 - 참고로 null, 빈 문자열, 0은 모두 false라고 판단한다. 반대로 0이 아닌 숫자, 문자열, 빈 배열 등은 true라고 판단한다.
 
 ```js
@@ -144,10 +144,10 @@ test("비어있지 않은 문자열은 true입니다.", () => {
 
 ### toBeGreaterThan, toBeGreaterThanOrEqual, toBeLessThan, toBeLessThanOrEqual
 
-- toBeGreaterThan는 A가 B보다 초과하는지 검증하는 Matcher이다. (A > B)
-- toBeGreaterThanOrEqual는 A가 B보다 이상인지 검증하는 Matcher이다. (A >= B)
-- toBeLessThan는 A가 B보다 미만인지 검증하는 Matcher이다.(A < B)
-- toBeLessThanOrEqual는 A가 B보다 이하인지 검증하는 Matcher이다.(A <= B)
+- toBeGreaterThan는 `A가 B보다 초과`하는지 검증하는 Matcher이다. `(A > B)`
+- toBeGreaterThanOrEqual는 `A가 B보다 이상`인지 검증하는 Matcher이다. `(A >= B)`
+- toBeLessThan는 `A가 B보다 미만`인지 검증하는 Matcher이다. `(A < B)`
+- toBeLessThanOrEqual는 `A가 B보다 이하`인지 검증하는 Matcher이다. `(A <= B)`
 
 ```js
 test("message는 10글자 이하여야 합니다.", () => {
@@ -225,7 +225,7 @@ test("에러가 발생하나요?", () => {
 
 <br />
 
-- 아래 코드는 에러에 인수를 전달하여 특정 에러를 검증하는 테스트 코드이다.
+- 아래 코드는 `에러`에 인수를 전달하여 특정 에러를 검증하는 테스트 코드이다.
 
 ```js
 const fn = {
@@ -688,6 +688,6 @@ expect(input).toBeChecked();
 
 ### 더 이상 사용하지 않는 matchers
 
-- toBeEmpty는 더 이상 사용하지 않는다. 대신 toBeEmptyDOMElement를 권장한다.
-- toBeInTheDOM는 더 이상 사용하지 않는다. 대신 toBeInTheDocument를 권장한다.
-- toHaveDescription는 더 이상 사용하지 않는다. 대신 toHaveAccessibleDescriptio를 권장한다.
+- toBeEmpty는 더 이상 사용하지 않는다. 대신 `toBeEmptyDOMElement`를 권장한다.
+- toBeInTheDOM는 더 이상 사용하지 않는다. 대신 `toBeInTheDocument`를 권장한다.
+- toHaveDescription는 더 이상 사용하지 않는다. 대신 `toHaveAccessibleDescription`를 권장한다.
