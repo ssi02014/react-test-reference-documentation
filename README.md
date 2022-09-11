@@ -74,7 +74,9 @@
 
 <br />
 
-- ⭐️ RTL은 유닛 테스트보다 `기능 테스트를`권장 한다. 즉 실제 사용자 경험과 유사한 방식의 테스트를 작성할 것을 권장하는 것이다.
+### ⭐️ RTL은 유닛 테스트보다 기능 테스트를 권장 한다.
+
+- 즉, 실제 사용자 경험과 유사한 방식의 테스트를 작성할 것을 권장하는 것이다.
   - 예를 들어 `<div>Hello World</div>`라는 코드가 있다면, RTL은 div 태그를 사용하는지보다 `Hello World` 메시지가 브라우저에 노출이 되는지 파악하는 것을 더 중요하다고 본다.
 - `기능`에 초점을 맞춘 테스트 방식은 신뢰도를 높임과 동시에 코드 리팩토링 시 테스트 코드 수정 빈도를 줄일 수 있습니다.
 
@@ -90,23 +92,24 @@
 
 ## 쿼리 우선순위
 
-- 아래 문서를 통해 가상 DOM에서 요소를 찾을 때 어떤 쿼리를 우선 순위로 사용해야 하는지 참고하자.
+- 아래 문서를 통해 `가상 DOM`에서 요소를 찾을 때 어떤 쿼리를 우선 순위로 사용해야 하는지 참고하자.
 - [쿼리 우선순위(priority)](https://github.com/ssi02014/React-Test-Documents-To-Reference/blob/master/docuemnts/priority.md)
 
 <br />
 
 ## 역할의 종류
 
-- [쿼리 우선순위(priority)](https://github.com/ssi02014/React-Test-Documents-To-Reference/blob/master/docuemnts/priority.md)를 봤으면 `getByRole`를 사용하는 방법 즉, `역할`을 통해 요소를 찾을 수 있고, 실제로 `스크린 리더에서 액세스 할 수 있다.` 따라서 접근성을 보장하기때문에 요소를 찾을때 `가장 선호되는 방법`이다.
-- getByRole이 어떤 역할을 갖고 있는지 확인하려면 아래 문서들을 참고하자.
+- [쿼리 우선순위(priority)](https://github.com/ssi02014/React-Test-Documents-To-Reference/blob/master/docuemnts/priority.md)를 봤으면 `*ByRole`을 사용하는 방법 즉, `역할`을 통해 요소를 찾을 수 있고, 실제로 `스크린 리더`에서 액세스 할 수 있다. 따라서 접근성을 보장하기때문에 요소를 찾을때 `가장 선호되는 방법`이다.
+- `*ByRole`은 여러 역할을 활용 할 수 있는데 이는 아래 문서들을 확인하고 참고하자.
   - [W3C - ARIA in HTML](https://www.w3.org/TR/html-aria/#docconformance)
-  - [W3C - getByRole 역할 종류](https://www.w3.org/TR/wai-aria/#role_definitions)
+  - [W3C - 역할 종류](https://www.w3.org/TR/wai-aria/#role_definitions)
   - [ARIA - Roles](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques#roles)
 
 <br />
 
-- role 속성을 사용해서 `div`처럼 모든 요소에 역할을 추가할 수 있다. 코드에는 단순히 `role=""`처럼 큰따옴표로 역할을 묶으면 된다.
-- 일반적으로 스크린 리더에서 테스트 요소를 찾을 수 없으면, 그건 우리의 앱이 스크린 리더에 친화적이지 않은 거고 접근성에서 안좋다는 의미이다.
+- 참고로 role 속성을 사용해서 `div`와 같은 요소에도 특정 역할을 추가할 수 있다. 코드에는 단순히 `role=""`처럼 속성을 추가하면 된다.
+- 일반적으로 스크린 리더에서 테스트 요소를 찾을 수 없으면, 그건 우리의 앱이 스크린 리더에 친화적이지 않은 거고 접근성에서 안좋다는 의미이다 ❗️
+- 아래 예제는 role 속성을 통해 역할을 부여한 예제이다.
 
 ```html
 <div role="textbox"></div>
