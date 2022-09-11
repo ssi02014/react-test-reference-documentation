@@ -1,6 +1,6 @@
 # 💻 리액트 테스트 참고 문서 저장소
 
-- 해당 저장소는 Jest, React-Testing-Library를 통해 테스트를 진행하면서 자주 확인하게되는 `쿼리 우선순위`, `역할의 종류`,`Screen Query`, `jest matchers`, `fireEvent(userEvent) 이벤트 종류` 등을 알아보기 쉽게, 공식 문서를 찾아보기 쉽게 정리한 저장소입니다.
+- 해당 저장소는 [Jest](https://jestjs.io/), [React-Testing-Library](https://testing-library.com/)를 통해 테스트를 진행하면서 자주 확인하게되는 `쿼리 우선순위`, `역할의 종류`,`Screen Query`, `jest matchers`, `fireEvent(userEvent) 이벤트 종류` 등을 알아보기 쉽게, 공식 문서를 찾아보기 쉽게 정리한 저장소입니다.
 - 오탈자 및 수정이 필요한 내용은 `pull request`, `issue` 등 자유롭게 남겨주시면 반영하겠습니다.
 
 <br />
