@@ -2,7 +2,7 @@
 
 ## 📄 목차
 
-- Jest 기본 Matchers
+### Jest 기본 Matchers
 
 1. [toBe](#toBe)
 2. [toEqual, toStrictEqual](#toequal-tostrictequal)
@@ -16,7 +16,7 @@
 
 <br />
 
-- Jest DOM Matchers
+### Jest DOM Matchers
 
 1. [toBeDisabled](#tobedisabled)
 2. [toBeEnabled](#tobeenabled)
