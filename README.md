@@ -20,8 +20,8 @@
 5. [역할의 종류](#역할의-종류)
 6. [Screen Query](#screen-query)
 7. [Jest Matchers](#jest-matchers)
-8. [fireEvent](#fireEvent)
-9. [userEvent](#userEvent)
+8. [fireEvent](#fireevent)
+9. [userEvent](#userevent)
 
 <br />
 
@@ -74,7 +74,7 @@
 
 <br />
 
-### ⭐️ RTL은 유닛 테스트보다 기능 테스트를 권장 한다.
+### RTL은 유닛 테스트보다 기능 테스트를 권장 한다.
 
 - 즉, 실제 사용자 경험과 유사한 방식의 테스트를 작성할 것을 권장하는 것이다.
   - 예를 들어 `<div>Hello World</div>`라는 코드가 있다면, RTL은 div 태그를 사용하는지보다 `Hello World` 메시지가 브라우저에 노출이 되는지 파악하는 것을 더 중요하다고 본다.
@@ -195,6 +195,7 @@ test("버튼을 클릭하면 배경색이 빨간색으로 변경한다.", () => 
 
 ## userEvent
 
+- [RTL - userEvent 공식 문서](https://testing-library.com/docs/user-event/intro)
 - [RTL - fireEvent 공식 문서](https://testing-library.com/docs/dom-testing-library/api-events/)를 보면 실제로 fireEvent도 좋지만 대부분의 경우 userEvent를 사용해야된다고 언급된다.
 - 일반적으로 fireEvent에 비해 userEvent가 사용자 이벤트를 `더욱 완전하고 현실적인 방식으로 시뮬레이션 한다.`
 - 쉽게 말하면, 사용자가 실제 웹사이트를 이용하는 플로우대로 시뮬레이션한다.
@@ -204,6 +205,21 @@ Most projects have a few use cases for fireEvent, but the majority of the time y
 ```
 
 - userEvent에대해서는 아래 문서를 통해 자세히 알아보자.
-- [userEvent](https://github.com/ssi02014/React-Test-Documents-To-Reference/blob/master/docuemnts/userEvent.md) ( ~ 작성중 )
+- [userEvent](https://github.com/ssi02014/React-Test-Documents-To-Reference/blob/master/docuemnts/userEvent.md)
 
 <br />
+
+## Jest에서 it과 test의 차이
+
+- jest에서 `it은 test의 별칭`이며, 따라서 기능이 완전히 동일하다.
+- 하지만, 이름이 다르기 때문에 테스트 이름 작성하는 부분에서 약간의 차이가 있다. 테스트 이름 가독성에 맞게 어느 것을 선택할지 결정하면 된다.
+
+```ts
+test("if it does the other thing", () => {});
+test("if it does the other thing", () => {});
+```
+
+```ts
+it("should do this thing", () => {});
+it("should do the other thing", () => {});
+```
